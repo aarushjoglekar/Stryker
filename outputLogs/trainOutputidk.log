@@ -1,0 +1,168 @@
+W0731 19:40:28.664000 493370 site-packages/torch/distributed/run.py:766] 
+W0731 19:40:28.664000 493370 site-packages/torch/distributed/run.py:766] *****************************************
+W0731 19:40:28.664000 493370 site-packages/torch/distributed/run.py:766] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0731 19:40:28.664000 493370 site-packages/torch/distributed/run.py:766] *****************************************
+{'lr': 0.001, 'epochs': 7, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 2}
+{'lr': 0.001, 'epochs': 7, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 1}
+{'lr': 0.001, 'epochs': 7, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 0}
+{'lr': 0.001, 'epochs': 7, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 3}
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:43: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:43: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:27: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:27: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:43: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:27: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:43: UserWarning: xFormers is available (SwiGLU)
+  warnings.warn("xFormers is available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:27: UserWarning: xFormers is available (Attention)
+  warnings.warn("xFormers is available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:33: UserWarning: xFormers is available (Block)
+  warnings.warn("xFormers is available (Block)")
+Epoch 1/7:   0%|          | 0/111 [00:00<?, ?it/s]Epoch 1/7:   0%|          | 0/111 [00:00<?, ?it/s]Epoch 1/7:   0%|          | 0/111 [00:00<?, ?it/s]Epoch 1/7:   0%|          | 0/111 [00:00<?, ?it/s]W0731 19:40:44.743000 493370 site-packages/torch/distributed/elastic/agent/server/api.py:719] Received 2 death signal, shutting down workers
+W0731 19:40:44.744000 493370 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 493479 closing signal SIGINT
+W0731 19:40:44.744000 493370 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 493480 closing signal SIGINT
+W0731 19:40:44.745000 493370 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 493482 closing signal SIGINT
+W0731 19:40:44.745000 493370 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 493483 closing signal SIGINT
+Epoch 1/7:   0%|          | 0/111 [00:11<?, ?it/s]
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/home/cosmos13/hamed2/train_DDP.py", line 391, in <module>
+[rank1]:     best_model = train(train_loader, valid_loader, lr=lr, epochs=epochs, local_rank=local_rank, frame_batch_size=frame_batch_size)
+[rank1]:   File "/home/cosmos13/hamed2/train_DDP.py", line 225, in train
+[rank1]:     for batch_idx, (inputs, labels, num_labels) in enumerate(tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs}")):
+[rank1]:                                                    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/tqdm/std.py", line 1181, in __iter__
+[rank1]:     for obj in iterable:
+[rank1]:                ^^^^^^^^
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 733, in __next__
+[rank1]:     data = self._next_data()
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 1491, in _next_data
+[rank1]:     idx, data = self._get_data()
+[rank1]:                 ~~~~~~~~~~~~~~^^
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 1453, in _get_data
+[rank1]:     success, data = self._try_get_data()
+[rank1]:                     ~~~~~~~~~~~~~~~~~~^^
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/utils/data/dataloader.py", line 1284, in _try_get_data
+[rank1]:     data = self._data_queue.get(timeout=timeout)
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/multiprocessing/queues.py", line 111, in get
+[rank1]:     if not self._poll(timeout):
+[rank1]:            ~~~~~~~~~~^^^^^^^^^
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/multiprocessing/connection.py", line 257, in poll
+[rank1]:     return self._poll(timeout)
+[rank1]:            ~~~~~~~~~~^^^^^^^^^
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/multiprocessing/connection.py", line 440, in _poll
+[rank1]:     r = wait([self], timeout)
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/multiprocessing/connection.py", line 1148, in wait
+[rank1]:     ready = selector.select(timeout)
+[rank1]:   File "/home/cosmos13/miniconda3/lib/python3.13/selectors.py", line 398, in select
+[rank1]:     fd_event_list = self._selector.poll(timeout)
+[rank1]: KeyboardInterrupt
+Epoch 1/7:   0%|          | 0/111 [00:11<?, ?it/s]
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/home/cosmos13/hamed2/train_DDP.py", line 391, in <module>
+[rank2]:     best_model = train(train_loader, valid_loader, lr=lr, epochs=epochs, local_rank=local_rank, frame_batch_size=frame_batch_size)
+[rank2]:   File "/home/cosmos13/hamed2/train_DDP.py", line 231, in train
+[rank2]:     inputs = inputs.to(device)
+[rank2]: KeyboardInterrupt
+W0731 19:40:45.637000 493370 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 493479 closing signal SIGTERM
+Epoch 1/7:   0%|          | 0/111 [00:11<?, ?it/s]
+W0731 19:40:45.638000 493370 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 493480 closing signal SIGTERM
+W0731 19:40:45.638000 493370 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 493482 closing signal SIGTERM
+W0731 19:40:45.639000 493370 site-packages/torch/distributed/elastic/multiprocessing/api.py:900] Sending process 493483 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/agent/server/api.py", line 711, in run
+    result = self._invoke_run(role)
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/agent/server/api.py", line 870, in _invoke_run
+    time.sleep(monitor_interval)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 84, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 493370 got signal: 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/agent/server/api.py", line 720, in run
+    self._shutdown(e.sigval)
+    ~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/agent/server/local_elastic_agent.py", line 372, in _shutdown
+    self._pcontext.close(death_sig)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 577, in close
+    self._close(death_sig=death_sig, timeout=timeout)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 912, in _close
+    handler.proc.wait(time_to_wait)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/subprocess.py", line 1280, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/subprocess.py", line 2060, in _wait
+    time.sleep(delay)
+    ~~~~~~~~~~^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 84, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 493370 got signal: 2
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/cosmos13/miniconda3/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+    ~~~^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+    ~~~~~~~~~~~~~~~
+        config=config,
+        ~~~~~~~~~~~~~~
+        entrypoint=cmd,
+        ~~~~~~~~~~~~~~~
+    )(*cmd_args)
+    ~^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    result = agent.run()
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/metrics/api.py", line 138, in wrapper
+    result = f(*args, **kwargs)
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/agent/server/api.py", line 725, in run
+    self._shutdown()
+    ~~~~~~~~~~~~~~^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/agent/server/local_elastic_agent.py", line 372, in _shutdown
+    self._pcontext.close(death_sig)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 577, in close
+    self._close(death_sig=death_sig, timeout=timeout)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 912, in _close
+    handler.proc.wait(time_to_wait)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/subprocess.py", line 1280, in wait
+    return self._wait(timeout=timeout)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/subprocess.py", line 2060, in _wait
+    time.sleep(delay)
+    ~~~~~~~~~~^^^^^^^
+  File "/home/cosmos13/miniconda3/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 84, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 493370 got signal: 2

@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Soccer app futuristic theme - Light mode */
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+
+    --card: 213 64% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 213 64% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 345 100% 25%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 213 64% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 213 64% 12%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 345 100% 35%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 213 64% 20%;
+    --input: 213 64% 18%;
+    --ring: 345 100% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom soccer theme colors */
+    --maroon: 345 100% 25%;
+    --maroon-light: 345 100% 35%;
+    --maroon-glow: 345 100% 45%;
+    --navy: 213 64% 15%;
+    --navy-light: 213 64% 20%;
+    --navy-lighter: 213 64% 25%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--maroon)), hsl(var(--maroon-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--navy)));
+    
+    /* Glass effects */
+    --glass-bg: hsl(var(--navy) / 0.1);
+    --glass-border: hsl(var(--maroon) / 0.2);
+    
+    /* Shadows and glows */
+    --shadow-glow: 0 0 30px hsl(var(--maroon) / 0.3);
+    --shadow-card: 0 10px 40px hsl(var(--navy) / 0.3);
+    --shadow-hero: 0 0 100px hsl(var(--maroon) / 0.2);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
+  }
+  
+  /* Custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--navy));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--maroon));
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--maroon-light));
+  }
+}
+
+@layer components {
+  /* Glass morphism effects */
+  .glass {
+    backdrop-filter: blur(12px);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+  }
+  
+  .glass-card {
+    backdrop-filter: blur(24px);
+    background: hsl(var(--card) / 0.2);
+    border: 1px solid hsl(var(--border) / 0.3);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Glow effects */
+  .glow-maroon {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .glow-hero {
+    box-shadow: var(--shadow-hero);
+  }
+  
+  /* Gradient backgrounds */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  /* Animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+  
+  /* Hover effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--maroon)/0.5)];
+  }
+}
+
+@layer utilities {
+  /* Text gradients */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-secondary {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 20px hsl(var(--maroon) / 0.3); }
+  100% { box-shadow: 0 0 40px hsl(var(--maroon) / 0.6); }
+}
+
+@keyframes slide-up {
+  0% { 
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,5 @@
+Stryker
+
+In fast-paced soccer matches, understanding what’s happening on the field isn’t just about seeing the present - it’s about recognizing the flow of play. Stryker takes a sequence-based approach to action recognition. It begins by converting labeled SoccerNet video clips into image matrices, extracting visual features from each frame using ResNet. These framewise features are then passed into a Transformer, which learns how actions evolve over time. A final layer predicts the probability of each possible action, selecting the top three most likely events - or noting “no action” if none are clear. This temporal and context-aware system aims to deepen our understanding of complex gameplay dynamics and support real-time decision-making in sports analytics.
+
+By: Aarush, Aaditya, Benjamin, Varshith

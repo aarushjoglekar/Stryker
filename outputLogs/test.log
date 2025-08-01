@@ -1,0 +1,50 @@
+W0801 04:35:07.640000 1193825 torch/distributed/run.py:766] 
+W0801 04:35:07.640000 1193825 torch/distributed/run.py:766] *****************************************
+W0801 04:35:07.640000 1193825 torch/distributed/run.py:766] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0801 04:35:07.640000 1193825 torch/distributed/run.py:766] *****************************************
+{'lr': 0.0001, 'epochs': 20, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 0, 'tf_num_layers': 6}
+{'lr': 0.0001, 'epochs': 20, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 3, 'tf_num_layers': 6}
+{'lr': 0.0001, 'epochs': 20, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 2, 'tf_num_layers': 6}
+{'lr': 0.0001, 'epochs': 20, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 1, 'tf_num_layers': 6}
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Testing:   0%|          | 0/16 [00:00<?, ?it/s]Testing:   0%|          | 0/16 [00:00<?, ?it/s]Testing:   0%|          | 0/16 [00:00<?, ?it/s]Testing:   0%|          | 0/16 [00:00<?, ?it/s]Testing:   6%|▋         | 1/16 [00:15<03:48, 15.22s/it]Testing:   6%|▋         | 1/16 [00:15<03:52, 15.50s/it]Testing:   6%|▋         | 1/16 [00:15<03:54, 15.65s/it]Testing:   6%|▋         | 1/16 [00:15<03:53, 15.59s/it]Testing:  12%|█▎        | 2/16 [00:19<02:03,  8.81s/it]Testing:  12%|█▎        | 2/16 [00:19<02:05,  8.95s/it]Testing:  12%|█▎        | 2/16 [00:20<02:07,  9.08s/it]Testing:  12%|█▎        | 2/16 [00:20<02:06,  9.04s/it]Testing:  19%|█▉        | 3/16 [00:24<01:29,  6.92s/it]Testing:  19%|█▉        | 3/16 [00:24<01:31,  7.04s/it]Testing:  19%|█▉        | 3/16 [00:25<01:33,  7.18s/it]Testing:  19%|█▉        | 3/16 [00:24<01:32,  7.15s/it]Testing:  25%|██▌       | 4/16 [00:28<01:10,  5.88s/it]Testing:  25%|██▌       | 4/16 [00:28<01:11,  5.96s/it]Testing:  25%|██▌       | 4/16 [00:29<01:12,  6.08s/it]Testing:  25%|██▌       | 4/16 [00:29<01:13,  6.12s/it]Testing:  31%|███▏      | 5/16 [00:33<00:59,  5.39s/it]Testing:  31%|███▏      | 5/16 [00:33<01:00,  5.47s/it]Testing:  31%|███▏      | 5/16 [00:34<01:01,  5.58s/it]Testing:  31%|███▏      | 5/16 [00:34<01:01,  5.62s/it]Testing:  38%|███▊      | 6/16 [00:37<00:50,  5.01s/it]Testing:  38%|███▊      | 6/16 [00:37<00:50,  5.05s/it]Testing:  38%|███▊      | 6/16 [00:38<00:51,  5.17s/it]Testing:  38%|███▊      | 6/16 [00:38<00:51,  5.20s/it]Testing:  44%|████▍     | 7/16 [00:41<00:42,  4.78s/it]Testing:  44%|████▍     | 7/16 [00:42<00:43,  4.81s/it]Testing:  44%|████▍     | 7/16 [00:42<00:44,  4.93s/it]Testing:  44%|████▍     | 7/16 [00:43<00:44,  4.93s/it]Testing:  50%|█████     | 8/16 [00:45<00:36,  4.61s/it]Testing:  50%|█████     | 8/16 [00:46<00:37,  4.64s/it]Testing:  50%|█████     | 8/16 [00:47<00:38,  4.77s/it]Testing:  50%|█████     | 8/16 [00:47<00:38,  4.77s/it]Testing:  56%|█████▋    | 9/16 [00:50<00:31,  4.51s/it]Testing:  56%|█████▋    | 9/16 [00:50<00:31,  4.52s/it]Testing:  56%|█████▋    | 9/16 [00:51<00:32,  4.65s/it]Testing:  56%|█████▋    | 9/16 [00:51<00:32,  4.65s/it]Testing:  62%|██████▎   | 10/16 [00:54<00:26,  4.41s/it]Testing:  62%|██████▎   | 10/16 [00:54<00:26,  4.41s/it]Testing:  62%|██████▎   | 10/16 [00:56<00:27,  4.55s/it]Testing:  62%|██████▎   | 10/16 [00:56<00:27,  4.56s/it]Testing:  69%|██████▉   | 11/16 [00:58<00:21,  4.35s/it]Testing:  69%|██████▉   | 11/16 [00:58<00:21,  4.34s/it]Testing:  69%|██████▉   | 11/16 [01:00<00:22,  4.49s/it]Testing:  69%|██████▉   | 11/16 [01:00<00:22,  4.50s/it]Testing:  75%|███████▌  | 12/16 [01:02<00:17,  4.32s/it]Testing:  75%|███████▌  | 12/16 [01:03<00:17,  4.31s/it]Testing:  75%|███████▌  | 12/16 [01:04<00:17,  4.45s/it]Testing:  75%|███████▌  | 12/16 [01:04<00:17,  4.47s/it]Testing:  81%|████████▏ | 13/16 [01:07<00:12,  4.30s/it]Testing:  81%|████████▏ | 13/16 [01:07<00:12,  4.29s/it]Testing:  81%|████████▏ | 13/16 [01:09<00:13,  4.42s/it]Testing:  81%|████████▏ | 13/16 [01:09<00:13,  4.44s/it]Testing:  88%|████████▊ | 14/16 [01:11<00:08,  4.28s/it]Testing:  88%|████████▊ | 14/16 [01:11<00:08,  4.27s/it]Testing:  88%|████████▊ | 14/16 [01:13<00:08,  4.40s/it]Testing:  88%|████████▊ | 14/16 [01:13<00:08,  4.42s/it]Testing:  94%|█████████▍| 15/16 [01:15<00:04,  4.27s/it]Testing:  94%|█████████▍| 15/16 [01:15<00:04,  4.25s/it]Testing:  94%|█████████▍| 15/16 [01:17<00:04,  4.38s/it]Testing:  94%|█████████▍| 15/16 [01:18<00:04,  4.40s/it]Testing: 100%|██████████| 16/16 [01:18<00:00,  3.86s/it]Testing: 100%|██████████| 16/16 [01:18<00:00,  4.91s/it]
+/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+Testing: 100%|██████████| 16/16 [01:18<00:00,  3.86s/it]Testing: 100%|██████████| 16/16 [01:18<00:00,  4.93s/it]
+/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+Testing: 100%|██████████| 16/16 [01:20<00:00,  3.98s/it]Testing: 100%|██████████| 16/16 [01:20<00:00,  5.06s/it]
+Testing: 100%|██████████| 16/16 [01:21<00:00,  3.99s/it]Testing: 100%|██████████| 16/16 [01:21<00:00,  5.07s/it]
+- Test F1Micro Score: 0.5887404580152672
+Testing complete.
+/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once

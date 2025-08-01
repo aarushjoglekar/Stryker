@@ -1,0 +1,88 @@
+nohup: ignoring input
+W0731 13:55:38.875000 31245 torch/distributed/run.py:766] 
+W0731 13:55:38.875000 31245 torch/distributed/run.py:766] *****************************************
+W0731 13:55:38.875000 31245 torch/distributed/run.py:766] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0731 13:55:38.875000 31245 torch/distributed/run.py:766] *****************************************
+{'lr': 0.001, 'epochs': 7, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 3}
+{'lr': 0.001, 'epochs': 7, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 1}
+{'lr': 0.001, 'epochs': 7, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 0}
+{'lr': 0.001, 'epochs': 7, 'batch_size': 64, 'frame_batch_size': 720, 'local_rank': 2}
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Using cache found in /home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/swiglu_ffn.py:51: UserWarning: xFormers is not available (SwiGLU)
+  warnings.warn("xFormers is not available (SwiGLU)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/attention.py:33: UserWarning: xFormers is not available (Attention)
+  warnings.warn("xFormers is not available (Attention)")
+/home/cosmos13/.cache/torch/hub/facebookresearch_dinov2_main/dinov2/layers/block.py:40: UserWarning: xFormers is not available (Block)
+  warnings.warn("xFormers is not available (Block)")
+Epoch 1/7:   0%|          | 0/111 [00:00<?, ?it/s]Epoch 1/7:   0%|          | 0/111 [00:00<?, ?it/s]Epoch 1/7:   0%|          | 0/111 [00:00<?, ?it/s]Epoch 1/7:   0%|          | 0/111 [00:00<?, ?it/s]- Train Loss: 0.7552, F1: 0.1949, Subset Acc: 0.0000, Mean Label Acc: 0.4531
+Epoch 1/7:   1%|          | 1/111 [00:13<25:03, 13.67s/it]Epoch 1/7:   1%|          | 1/111 [00:13<25:03, 13.67s/it]Epoch 1/7:   1%|          | 1/111 [00:13<25:04, 13.67s/it]Epoch 1/7:   1%|          | 1/111 [00:13<25:05, 13.68s/it]- Train Loss: 0.4208, F1: 0.3577, Subset Acc: 0.1094, Mean Label Acc: 0.8428
+Epoch 1/7:   2%|▏         | 2/111 [00:18<15:26,  8.50s/it]Epoch 1/7:   2%|▏         | 2/111 [00:18<15:26,  8.50s/it]Epoch 1/7:   2%|▏         | 2/111 [00:18<15:26,  8.50s/it]Epoch 1/7:   2%|▏         | 2/111 [00:18<15:26,  8.50s/it]- Train Loss: 0.3988, F1: 0.0000, Subset Acc: 0.0000, Mean Label Acc: 0.8539
+Epoch 1/7:   3%|▎         | 3/111 [00:24<12:58,  7.21s/it]Epoch 1/7:   3%|▎         | 3/111 [00:24<12:58,  7.21s/it]Epoch 1/7:   3%|▎         | 3/111 [00:24<12:58,  7.21s/it]Epoch 1/7:   3%|▎         | 3/111 [00:24<12:58,  7.21s/it]- Train Loss: 0.3492, F1: 0.4762, Subset Acc: 0.1562, Mean Label Acc: 0.8649
+Epoch 1/7:   4%|▎         | 4/111 [00:29<11:15,  6.31s/it]Epoch 1/7:   4%|▎         | 4/111 [00:29<11:15,  6.31s/it]Epoch 1/7:   4%|▎         | 4/111 [00:29<11:15,  6.31s/it]Epoch 1/7:   4%|▎         | 4/111 [00:29<11:15,  6.31s/it]- Train Loss: 0.3204, F1: 0.3908, Subset Acc: 0.0938, Mean Label Acc: 0.8548
+Epoch 1/7:   5%|▍         | 5/111 [00:33<10:11,  5.77s/it]Epoch 1/7:   5%|▍         | 5/111 [00:33<10:11,  5.77s/it]Epoch 1/7:   5%|▍         | 5/111 [00:33<10:11,  5.77s/it]Epoch 1/7:   5%|▍         | 5/111 [00:33<10:11,  5.77s/it]- Train Loss: 0.3258, F1: 0.3990, Subset Acc: 0.0469, Mean Label Acc: 0.8759
+Epoch 1/7:   5%|▌         | 6/111 [00:38<09:33,  5.46s/it]Epoch 1/7:   5%|▌         | 6/111 [00:38<09:33,  5.46s/it]Epoch 1/7:   5%|▌         | 6/111 [00:38<09:33,  5.46s/it]Epoch 1/7:   5%|▌         | 6/111 [00:38<09:33,  5.46s/it]- Train Loss: 0.3182, F1: 0.0000, Subset Acc: 0.0000, Mean Label Acc: 0.8612
+Epoch 1/7:   6%|▋         | 7/111 [00:43<09:07,  5.27s/it]Epoch 1/7:   6%|▋         | 7/111 [00:43<09:07,  5.27s/it]Epoch 1/7:   6%|▋         | 7/111 [00:43<09:07,  5.27s/it]Epoch 1/7:   6%|▋         | 7/111 [00:43<09:07,  5.27s/it]- Train Loss: 0.3164, F1: 0.0000, Subset Acc: 0.0000, Mean Label Acc: 0.8575
+Epoch 1/7:   7%|▋         | 8/111 [00:48<08:48,  5.13s/it]Epoch 1/7:   7%|▋         | 8/111 [00:48<08:48,  5.13s/it]Epoch 1/7:   7%|▋         | 8/111 [00:48<08:48,  5.13s/it]Epoch 1/7:   7%|▋         | 8/111 [00:48<08:48,  5.13s/it]- Train Loss: 0.3061, F1: 0.3339, Subset Acc: 0.0469, Mean Label Acc: 0.8778
+Epoch 1/7:   8%|▊         | 9/111 [00:53<08:34,  5.04s/it]Epoch 1/7:   8%|▊         | 9/111 [00:53<08:34,  5.04s/it]Epoch 1/7:   8%|▊         | 9/111 [00:53<08:34,  5.04s/it]Epoch 1/7:   8%|▊         | 9/111 [00:53<08:34,  5.04s/it]- Train Loss: 0.3045, F1: 0.3943, Subset Acc: 0.0781, Mean Label Acc: 0.8814
+Epoch 1/7:   9%|▉         | 10/111 [00:58<08:23,  4.99s/it]Epoch 1/7:   9%|▉         | 10/111 [00:58<08:23,  4.99s/it]Epoch 1/7:   9%|▉         | 10/111 [00:58<08:23,  4.99s/it]Epoch 1/7:   9%|▉         | 10/111 [00:58<08:23,  4.99s/it]- Train Loss: 0.3007, F1: 0.3661, Subset Acc: 0.0312, Mean Label Acc: 0.8732
+Epoch 1/7:  10%|▉         | 11/111 [01:03<08:14,  4.95s/it]Epoch 1/7:  10%|▉         | 11/111 [01:03<08:14,  4.95s/it]Epoch 1/7:  10%|▉         | 11/111 [01:03<08:14,  4.95s/it]Epoch 1/7:  10%|▉         | 11/111 [01:03<08:14,  4.95s/it]- Train Loss: 0.3173, F1: 0.3057, Subset Acc: 0.0156, Mean Label Acc: 0.8741
+Epoch 1/7:  11%|█         | 12/111 [01:07<08:07,  4.92s/it]Epoch 1/7:  11%|█         | 12/111 [01:07<08:07,  4.92s/it]Epoch 1/7:  11%|█         | 12/111 [01:07<08:07,  4.92s/it]Epoch 1/7:  11%|█         | 12/111 [01:07<08:07,  4.92s/it]- Train Loss: 0.3272, F1: 0.3250, Subset Acc: 0.0625, Mean Label Acc: 0.8686
+Epoch 1/7:  12%|█▏        | 13/111 [01:12<08:01,  4.92s/it]Epoch 1/7:  12%|█▏        | 13/111 [01:12<08:01,  4.92s/it]Epoch 1/7:  12%|█▏        | 13/111 [01:12<08:01,  4.91s/it]Epoch 1/7:  12%|█▏        | 13/111 [01:12<08:01,  4.92s/it]- Train Loss: 0.3346, F1: 0.3604, Subset Acc: 0.0938, Mean Label Acc: 0.8686
+Epoch 1/7:  13%|█▎        | 14/111 [01:17<07:55,  4.91s/it]Epoch 1/7:  13%|█▎        | 14/111 [01:17<07:55,  4.91s/it]Epoch 1/7:  13%|█▎        | 14/111 [01:17<07:55,  4.91s/it]Epoch 1/7:  13%|█▎        | 14/111 [01:17<07:55,  4.91s/it]W0731 13:57:03.643000 31245 torch/distributed/elastic/agent/server/api.py:719] Received 15 death signal, shutting down workers
+W0731 13:57:03.644000 31245 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 31354 closing signal SIGTERM
+W0731 13:57:03.645000 31245 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 31355 closing signal SIGTERM
+W0731 13:57:03.646000 31245 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 31356 closing signal SIGTERM
+W0731 13:57:03.647000 31245 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 31357 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/home/cosmos13/hamed2/env/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+    ~~~^^^^^^
+  File "/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+    ~~~~~~~~~~~~~~~
+        config=config,
+        ~~~~~~~~~~~~~~
+        entrypoint=cmd,
+        ~~~~~~~~~~~~~~~
+    )(*cmd_args)
+    ~^^^^^^^^^^^
+  File "/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/launcher/api.py", line 261, in launch_agent
+    result = agent.run()
+  File "/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/elastic/metrics/api.py", line 138, in wrapper
+    result = f(*args, **kwargs)
+  File "/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/elastic/agent/server/api.py", line 711, in run
+    result = self._invoke_run(role)
+  File "/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/elastic/agent/server/api.py", line 870, in _invoke_run
+    time.sleep(monitor_interval)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/cosmos13/hamed2/env/lib/python3.13/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 84, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 31245 got signal: 15
