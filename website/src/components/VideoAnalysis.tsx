@@ -95,21 +95,21 @@ const VideoAnalysis: React.FC<VideoAnalysisProps> = ({
     }
   };
 
-  const handleFullscreen = () => {
-    const container = containerRef.current;
-    if (!container) return;
-    if (document.fullscreenElement) {
-      document.exitFullscreen();
-    } else {
-      container.requestFullscreen();
-    }
-  };
+  // const handleFullscreen = () => {
+  //   const container = containerRef.current;
+  //   if (!container) return;
+  //   if (document.fullscreenElement) {
+  //     document.exitFullscreen();
+  //   } else {
+  //     container.requestFullscreen();
+  //   }
+  // };
 
-  const formatTime = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
-  };
+  // const formatTime = (seconds: number) => {
+  //   const mins = Math.floor(seconds / 60);
+  //   const secs = Math.floor(seconds % 60);
+  //   return `${mins}:${secs.toString().padStart(2, '0')}`;
+  // };
 
   return (
     <div ref={containerRef} className="fixed inset-0 bg-background/95 backdrop-blur-sm z-50 overflow-auto">
@@ -134,10 +134,11 @@ const VideoAnalysis: React.FC<VideoAnalysisProps> = ({
                     ref={videoRef}
                     src={videoPath}
                     className="w-full h-full object-contain"
+                    controls={true}
                   />
                 )}
                 {/* Controls overlay */}
-                <div className="absolute bottom-4 left-4 right-4">
+                {/* <div className="absolute bottom-4 left-4 right-4">
                   <div className="glass-card p-4 rounded-lg">
                     <div className="flex items-center gap-4 mb-3">
                       <Button variant="ghost" size="sm" onClick={togglePlay}>
@@ -160,7 +161,7 @@ const VideoAnalysis: React.FC<VideoAnalysisProps> = ({
                       </span>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
