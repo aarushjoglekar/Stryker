@@ -10,6 +10,7 @@ from flask_cors import CORS
 from video_transformer import VideoTransformer
 import traceback
 import ssl
+from collections import OrderedDict
 
 ssl._create_default_https_context = ssl._create_unverified_context
 
@@ -41,8 +42,18 @@ CORS(app, resources={ r"/api/*": { "origins": "http://localhost:8080" } })
 
 
 def predict(video_path: str):
-    frames, num_frames_per_clip = getFramesFromVideo(video_path)
-    model = VideoTransformer(num_frames_per_clip = num_frames_per_clip)
+    frames = getFramesFromVideo(video_path)
+    model = VideoTransformer(num_frames_per_clip = 60)
+    
+    raw_ckpt = torch.load('models/best_model.pth', map_location='cpu')
+    new_state_dict = OrderedDict()
+    for k, v in raw_ckpt.items():
+        # remove the "module." prefix
+        new_key = k.replace('module.', '')  
+        new_state_dict[new_key] = v
+    model.load_state_dict(new_state_dict)
+    model.eval()
+    
     output = model.forward(frames)
     probs = torch.sigmoid(output)[0]  # assume batch dim
     events = []
@@ -90,9 +101,8 @@ def getFramesFromVideo(video_path: str):
     if not frames:
         raise RuntimeError("No frames extracted from video.")
 
-    # limit to first 60 frames and add batch dim
-    num_frames_per_clip = len(frames)
-    return torch.stack(frames, dim=0).unsqueeze(0), num_frames_per_clip
+    frames = frames[:60]
+    return torch.stack(frames, dim=0).unsqueeze(0)
 
 @app.route('/api/predict', methods=['POST'])
 def getPrediction():
