@@ -37,6 +37,9 @@ website/*.local
 processedData/
 BestCheckpoints/
 
+venv/
+__pycache__/
+
 # # OLD GIT IGNORE (INSIDE THE WEBSITE FOLDER)
 # # Logs
 # logs

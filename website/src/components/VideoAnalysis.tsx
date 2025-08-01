@@ -25,92 +25,53 @@ const VideoAnalysis: React.FC<VideoAnalysisProps> = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
   const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Load video metadata and sync time updates
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleLoaded = () => {
-      setDuration(video.duration);
-      setIsLoading(false);
-    };
-    const handleTimeUpdate = () => {
-      setCurrentTime(video.currentTime);
-    };
-
-    video.addEventListener('loadedmetadata', handleLoaded);
-    video.addEventListener('timeupdate', handleTimeUpdate);
-
-    return () => {
-      video.removeEventListener('loadedmetadata', handleLoaded);
-      video.removeEventListener('timeupdate', handleTimeUpdate);
-    };
-  }, [videoPath]);
-
-  // Mock analysis data (replace with real API call)
   useEffect(() => {
     if (!videoPath) return;
-    setIsLoading(true);
 
-    // Call the Flask server at localhost:5000
-    fetch('http://localhost:5000/api/predict', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ videoPath }),
-    })
-      .then(async (res) => {
-        if (!res.ok) throw new Error(`Server error ${res.status}`);
+    const analyze = async () => {
+      setIsLoading(true);
+      try {
+        // 1. grab the video bytes from your own server
+        const fileResp = await fetch(videoPath);
+        if (!fileResp.ok) throw new Error(`Couldn’t fetch video: ${fileResp.status}`);
+        const blob = await fileResp.blob();
+
+        // 2. wrap in a File object (so Flask sees a filename)
+        const file = new File(
+          [blob],
+          videoPath.split('/').pop() || 'upload.mp4',
+          { type: blob.type }
+        );
+
+        // 3. build FormData & send to Flask
+        const formData = new FormData();
+        formData.append('video', file);
+
+        const res = await fetch('http://localhost:5001/api/predict', {
+          method: 'POST',
+          body: formData,
+        });
+        if (!res.ok) {
+          // pull the JSON body to see the server-side error message
+          const errBody = await res.json().catch(() => ({ error: 'Invalid JSON' }));
+          console.error('Flask error payload:', errBody);
+          throw new Error(`Server error ${res.status}`);
+        }
         const data: AnalysisData = await res.json();
         setAnalysisData(data);
-      })
-      .catch((err) => console.error('Prediction error:', err))
-      .finally(() => setIsLoading(false));
+      } catch (err) {
+        console.error('Upload / prediction error:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    analyze();
   }, [videoPath]);
-
-  const togglePlay = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (isPlaying) {
-      video.pause();
-      setIsPlaying(false);
-    } else {
-      video.play();
-      setIsPlaying(true);
-    }
-  };
-
-  const handleRestart = () => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.currentTime = 0;
-    if (!isPlaying) {
-      video.play();
-      setIsPlaying(true);
-    }
-  };
-
-  // const handleFullscreen = () => {
-  //   const container = containerRef.current;
-  //   if (!container) return;
-  //   if (document.fullscreenElement) {
-  //     document.exitFullscreen();
-  //   } else {
-  //     container.requestFullscreen();
-  //   }
-  // };
-
-  // const formatTime = (seconds: number) => {
-  //   const mins = Math.floor(seconds / 60);
-  //   const secs = Math.floor(seconds % 60);
-  //   return `${mins}:${secs.toString().padStart(2, '0')}`;
-  // };
-
+  
   return (
     <div ref={containerRef} className="fixed inset-0 bg-background/95 backdrop-blur-sm z-50 overflow-auto">
       <div className="container mx-auto px-6 py-8">

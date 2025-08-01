@@ -3,9 +3,15 @@ from PIL import Image
 import os
 import torch
 from torchvision import transforms
+import tempfile
+from werkzeug.utils import secure_filename
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from video_transformer import VideoTransformer
+import traceback
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 labels2ids = {
     "Ball out of play": 0,
@@ -30,11 +36,13 @@ labels2ids = {
 labelsStrings = list(labels2ids.keys())  # corrected to list
 
 app = Flask(__name__)
-CORS(app)  # enable CORS for all domains (configure in prod)
+# CORS(app)  # enable CORS for all domains (configure in prod)
+CORS(app, resources={ r"/api/*": { "origins": "http://localhost:8080" } })
+
 
 def predict(video_path: str):
-    frames = getFramesFromVideo(video_path)
-    model = VideoTransformer()
+    frames, num_frames_per_clip = getFramesFromVideo(video_path)
+    model = VideoTransformer(num_frames_per_clip = num_frames_per_clip)
     output = model.forward(frames)
     probs = torch.sigmoid(output)[0]  # assume batch dim
     events = []
@@ -83,29 +91,37 @@ def getFramesFromVideo(video_path: str):
         raise RuntimeError("No frames extracted from video.")
 
     # limit to first 60 frames and add batch dim
-    frames = frames[:60]
-    return torch.stack(frames, dim=0).unsqueeze(0)
-
+    num_frames_per_clip = len(frames)
+    return torch.stack(frames, dim=0).unsqueeze(0), num_frames_per_clip
 
 @app.route('/api/predict', methods=['POST'])
 def getPrediction():
-    """
-    Flask endpoint to handle prediction requests.
-    Expects JSON: {"videoPath": "path/to/video.mp4"}
-    Returns: {"events": [{"action": str, "confidence": float}, ...]}
-    """
-    data = request.get_json()
-    video_path = data.get('videoPath')
-    if not video_path:
-        return jsonify({'error': 'videoPath is required'}), 400
+    if 'video' not in request.files:
+        return jsonify({'error': 'No video file part'}), 400
+
+    file = request.files['video']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+
+    filename = secure_filename(file.filename)
+    temp_dir = tempfile.mkdtemp()
+    temp_path = os.path.join(temp_dir, filename)
+    file.save(temp_path)
 
     try:
-        result = predict(video_path)
+        result = predict(temp_path)
         return jsonify(result)
     except Exception as e:
+        # <-- print the full traceback so you know exactly what went wrong
+        traceback.print_exc()
         return jsonify({'error': str(e)}), 500
+    finally:
+        try:
+            os.remove(temp_path)
+            os.rmdir(temp_dir)
+        except OSError:
+            pass
 
 
 if __name__ == '__main__':
-    # Run Flask development server
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
