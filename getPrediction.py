@@ -63,7 +63,10 @@ def predict(video_path: str):
                 'action': labelsStrings[idx],
                 'confidence': probability.item()
             })
-    return {'events': events}
+            
+    sigmoid_list = probs.detach().cpu().tolist()
+    output_list  = output.detach().cpu().tolist()
+    return {'events': events, 'sigmoid': sigmoid_list, 'output': output_list[0]}
 
 
 def getFramesFromVideo(video_path: str):
